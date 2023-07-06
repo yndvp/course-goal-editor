@@ -10,9 +10,16 @@ function App() {
     { id: 'g2', content: 'Finish the course' },
   ]);
 
+  const addGoalHandler = (text) => {
+    setGoals((prevState) => [
+      { id: Math.random().toString(), content: text },
+      ...prevState,
+    ]);
+  };
+
   return (
     <div>
-      <GoalInput />
+      <GoalInput onAddGoal={addGoalHandler} />
       <GoalList items={goals} />
     </div>
   );
