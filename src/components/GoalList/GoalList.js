@@ -5,7 +5,7 @@ const GoalList = (props) => {
   return (
     <ul className={styles['goal-list']}>
       {props.items.map((item) => (
-        <GoalItem key={item.id} id={item.id}>
+        <GoalItem key={item.id} id={item.id} onDelete={props.onDeleteItem}>
           {item.content}
         </GoalItem>
       ))}

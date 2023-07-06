@@ -17,13 +17,20 @@ function App() {
     ]);
   };
 
+  const deleteItemHandler = (goalId) => {
+    setGoals((prevGoals) => {
+      const updatedGoals = prevGoals.filter((goal) => goal.id !== goalId);
+      return updatedGoals;
+    });
+  };
+
   return (
     <div>
       <section id='goal-form'>
         <GoalInput onAddGoal={addGoalHandler} />
       </section>
       <section id='goals'>
-        <GoalList items={goals} />
+        <GoalList items={goals} onDeleteItem={deleteItemHandler} />
       </section>
     </div>
   );
