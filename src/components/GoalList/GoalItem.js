@@ -1,5 +1,7 @@
+import styles from './GoalItem.module.css';
+
 const GoalItem = (props) => {
-  return <li>{props.children}</li>;
+  return <li className={styles['goal-item']}>{props.children}</li>;
 };
 
 export default GoalItem;

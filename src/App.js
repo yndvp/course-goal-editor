@@ -19,8 +19,12 @@ function App() {
 
   return (
     <div>
-      <GoalInput onAddGoal={addGoalHandler} />
-      <GoalList items={goals} />
+      <section id='goal-form'>
+        <GoalInput onAddGoal={addGoalHandler} />
+      </section>
+      <section id='goals'>
+        <GoalList items={goals} />
+      </section>
     </div>
   );
 }
