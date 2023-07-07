@@ -24,14 +24,20 @@ function App() {
     });
   };
 
+  let content = (
+    <p style={{ textAlign: 'center' }}>No goals found. Maybe add one?</p>
+  );
+
+  if (goals.length > 0) {
+    content = <GoalList items={goals} onDeleteItem={deleteItemHandler} />;
+  }
+
   return (
     <div>
       <section id='goal-form'>
         <GoalInput onAddGoal={addGoalHandler} />
       </section>
-      <section id='goals'>
-        <GoalList items={goals} onDeleteItem={deleteItemHandler} />
-      </section>
+      <section id='goals'>{content}</section>
     </div>
   );
 }
